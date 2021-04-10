@@ -20,8 +20,8 @@ public class Main {
             System.out.println("1. Add person");
             System.out.println("2. View all contacts");
             System.out.println("3. Find contact");
-            System.out.println("4. Remove person");
-            System.out.println("5. Update person");
+            System.out.println("4. Update person");
+            System.out.println("5. Remove person");
             System.out.println("\nEnter Quit to End Programm\n");
 
             System.out.print("Enter your choice:");
@@ -83,28 +83,22 @@ public class Main {
             counter++;
         }
     }
-    void findContact(){
+    void findContact() {
         System.out.println("Type name or number to search:");
         String contactName = scanner.nextLine();
 
         for (Contacts contacts : menu.contacts) {
             if (contacts.name.contains(contactName)) {
-                System.out.println(contacts);
+                System.out.println(contacts.name);
+            }
+            if (contacts.phoneNumber.contains(contactName)); {
+                System.out.println(contacts.phoneNumber);
+        }
+            if (contacts.email.contains(contactName)); {
+                System.out.println(contacts.email);
             }
         }
-   /* void findContact() {
-        System.out.println("Type name or number to search:");
-              String contactName = " ";
-              ArrayList<Contacts> searchFor = menu.getAllContacts();
-              contactName = scanner.nextLine();
-
-            if(contactName.contains(searchFor)){
-                System.out.println("Found name " + contactName);}
-            else{
-                System.out.println(searchFor + "not Found");
-            }
-                System.out.println(contactName.indexOf(String.valueOf(searchFor)));*/
-        }
+    }
     void updateContact(){
         Contacts contacts = new Contacts();
         this.viewAllContacts();
